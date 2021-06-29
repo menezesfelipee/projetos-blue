@@ -60,7 +60,7 @@ while True:
             if valor == max(jogadas):
                 vitorias[index-1] += 1
                 print(f'✔️ [green]+1 PONTO PARA O JOGADOR {index}![/green] O 🎲 caiu em {valor}.')
-            else: # Se não foi o maior valor, simplesmente mostra na tela
+            else: # Se não foi o maior valor, simplesmente mostra na tela.
                 print(f'O 🎲 do Jogador {index} caiu em {valor}.')
             sleep(1)
         # Esse bloco de if serve para mostrar informações diferentes na tela caso seja a última rodada.
@@ -83,30 +83,30 @@ while True:
     vencedores = list()    # Essa variável armazenará o index de todos os vencedores
     # Bloco de for utilizando o enumerate para comparar o número de vitórias de cada jogador com o max(vitorias) e adiconando seu index à variável 'vencedores '.
     for index, valor in enumerate(vitorias):
-        if valor == max(vitorias):          
+        if valor == max(vitorias):
             vencedores.append(index+1)
-    vitoria = '1 vitória' if max(vitorias) == 1 else f'{max(vitorias)} vitórias'    # Garantinando o plural na palavra 'vitória', caso seja maior que 1.
+    vitoria = '1 vitória' if max(vitorias) == 1 else f'{max(vitorias)} vitórias'    # Garantindo o plural na palavra 'vitória', caso seja maior que 1.
     # Bloco de if, elife e else, para mostrar na tela todos os vencedores, independete de quantos tenham sido.
     if len(vencedores) == 1:    # Caso só tenha 1 vencedor.
-        print(f'\n[italic red]Com {vitoria}, o grande campeão 🏆 é.....[/italic red]\n')
+        print(f'\n        [italic red]Com {vitoria}, o grande campeão 🏆 é.....[/italic red]\n')
         sleep(2)
         tprint(f'Jogador   {vencedores[0]}')
     elif len(vencedores) == 2:  # Caso tenha 2 vencedores.
-        print(f'\n[italic red]Foi uma partida muuuito acirrada... Com {vitoria} cada, os vencedores 🏆 são:[/italic red]')
+        print(f'\n        [italic red]Foi uma partida muuuito acirrada...\nCom {vitoria} cada, os vencedores 🏆 são:\n[/italic red]')
         sleep(2)
         tprint(f'Jogador   {vencedores[0]}\nJogador   {vencedores[1]}')
     elif len(vencedores) == 3:  # Caso tenha 3 vencedores.
-        print(f'\n[italic red]Foi uma partida muuuito acirrada... Com {vitoria} cada, os vencedores 🏆 são:[/italic red]')
+        print(f'\n        [italic red]Foi uma partida muuuito acirrada...\nCom {vitoria} cada, os vencedores 🏆 são:\n[/italic red]')
         sleep(2)
         tprint(f'Jogador   {vencedores[0]}\nJogador   {vencedores[1]}\nJogador   {vencedores[2]}')  
     else:   # Caso tenha 4 vencedores.
-        print(f'\n[italic red]Essa foi uma partida incrível!!! Com {vitoria} cada, os 4 jogadores......[/italic red]')
+        print(f'\n        [italic red]Essa foi uma partida incrível!!!\nCom {vitoria} cada, os 4 jogadores......\n[/italic red]')
         sleep(2)
         tprint('EMPATARAM!')
     continuar = input('\n\n\nDeseja jogar novamente? [S/N] ').strip().upper()[0]
-    while continuar not in 'SN':    # Bloco de while garante que o usuário teclará "S" ou "N"
+    while continuar not in 'SN':    # Bloco de while garante que o usuário teclará "S" ou "N".
         continuar = input('Comando inválido. Digite novamente: [S/N] ').strip().upper()[0]
-    if continuar == 'N':    # Se teclar "N", o programa agradece, limpa a tela e finaliza
+    if continuar == 'N':    # Se teclar "N", o programa agradece, limpa a tela e finaliza.
         sleep(1)
         print('[italic]\n\nObrigado por jogar![/italic]')
         sleep(3)
