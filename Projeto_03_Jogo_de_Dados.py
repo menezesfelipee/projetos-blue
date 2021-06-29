@@ -1,8 +1,8 @@
 from os import system               # Limpar o console.
 from random import choices          # Sorteia aleatoriamente uma lista de valores com reposição numa amostra.
 from time import sleep              # Pausa entre uma linha e outra.
-from rich import print              # Cores e emojis no print.
-from art import tprint, text2art    # Converte texto para ASCII Art.
+from rich import print              # Cores e emojis no print.    # Necessário instalar antes com 'pip install rich'.
+from art import tprint, text2art    # Converte texto para ASCII Art.    # Necessário instalar antes com 'pip install art'.
 
 system('cls')   # Inicia limpando a tela.
 # Cabeçalho até a linha 13.
