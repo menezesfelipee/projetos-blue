@@ -37,13 +37,13 @@ def grafico(votos):
     # Esse if abaixo se faz necessário pois caso todos os votos fossem Nulos ou Brancos não seria possível calcular a porcentagem dos votos válidos (divisão por zero).
     if sum(votos.values()) > 0:
         visualizacao = list()   # Lista vazia para armazenar cada linha calculada.
-        for candidato, quantidade in votos.items(): #Rodando todos candidatos e seus respectivos votos.
+        for candidato, quantidade in votos.items(): # Rodando todos candidatos e seus respectivos votos.
             graficoLinha = ''   # String vazia para escrever a linha.
             porcentagem = quantidade / sum(votos.values()) * 100     # Calculando a porcentagem votos de cada candidato.
             # Para cada porcento arredondado de voto, esse 'for' adicionará um tracinho, que será responsável pelo efeito de gráfico.
             for i in range(round(porcentagem)):
                 graficoLinha += '|'     # Adicionando os tracinhos.
-            visualizacao.append([candidato, str(porcentagem)+" %", graficoLinha])   # Adiciona cada linha na lista de visualização.
+            visualizacao.append([candidato, f'{porcentagem:.2f}%', graficoLinha])   # Adiciona cada linha na lista de visualização.
         return tabulate(visualizacao, ["CANDIDATO", " %", "GRÁFICO"], tablefmt="simple")    # Retorna a tabela (gráfico) solicitada com o formato "simple".
     else:
         return 'Ainda não temos votos suficientes para gerar um gráfico.'   # Caso não tenha nenhum voto válido vai retornar isso.
